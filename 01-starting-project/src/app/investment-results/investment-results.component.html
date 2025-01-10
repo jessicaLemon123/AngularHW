@@ -1,0 +1,25 @@
+@if(!showControl){
+<h1>Please enter some values and press "CACULATE"</h1>
+} @if(showControl){
+<table>
+  <thead>
+    <th>Year</th>
+    <th>Investment Value</th>
+    <th>Interest(Year)</th>
+    <th>Total Interest</th>
+    <th>Invested Capital</th>
+  </thead>
+  <tbody>
+    @for (data of getAnnualData; track data.year) {
+    <tr>
+      <td>{{ data.year }}</td>
+      <td>{{ data.annualInvestment | currency }}</td>
+      <td>{{ data.interest | currency }}</td>
+      <td>{{ data.totalInterest | currency }}</td>
+      <td>{{ data.totalAmountInvested | currency }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+}
